@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const TouchTypingProject = () => {
+function App  () {
     const [inputValue, setInputValue] = useState("");
     const [randomSentence, setSentence] = useState("");
     const [keyCount, setKeyCount] = useState(0);
@@ -26,16 +26,19 @@ const TouchTypingProject = () => {
 
         setInputValue(e.target.value);
     };
+
     const sentences = [
-        "ladjasfj dlflkasd ",
-        "adfjkl asdfjkl",
-        "jladfsjlasd",
-        "dkfjsadfjkl",
-        "kasdfjklas",
+        "ladj asfj dlflka sd",
+        "adf jkl asd fjkl",
+        "jlad fsjla sd",
+        "dkfj sadfj kl",
+        "kasd fjk las",
     ];
 
     function getRandomSentence() {
         const randomIndex = Math.floor(Math.random() * sentences.length);
+    console.log(randomIndex)
+        
         setSentence(sentences[randomIndex]);
       }
       
@@ -53,9 +56,6 @@ const TouchTypingProject = () => {
 
 
 
-
-
-
     const isCorrect = inputValue === randomSentence.slice(0, inputValue.length);
 
     return (
@@ -63,18 +63,23 @@ const TouchTypingProject = () => {
             <div className="touch-test">
             <h2>Touch Typing Project</h2>
             <p>Type the sentence below:</p>
-            <h2 style={{ color: isCorrect ? "green" : "red" }}>{randomSentence}</h2>
-            <textarea
+            <h2 style={{ color: isCorrect ? "#1F8A70" : "#F96666" }}>{randomSentence}</h2>
+            <input type="text" placeholder="Enter the above words" id="text"
                 value={inputValue}
                 onChange={handleInputChange} onKeyUp={handleKeyCount}
                 style={{
                     backgroundColor: isCorrect ? "lightgreen" : "pink",
                     color: "black",
                 }}
-            ></textarea>
+            ></input>
 
             {
-                keyCounted ? (<div><p>keyCount : {keyCount}</p>  <p>Accuracy : {accuracy}</p> <button onClick={() => {retryHandler()}}>Retry</button> </div>) : ("")
+                keyCounted ? (<div id="result"><p>keyCount : {keyCount}</p>  <p>Accuracy : {accuracy}</p> 
+              
+                
+                <button className="btn" onClick={() => {retryHandler()}}>Retry</button>
+                
+               </div>) : ("")
             }
             </div>
             
@@ -83,4 +88,4 @@ const TouchTypingProject = () => {
     );
 };
 
-export default TouchTypingProject;
+export default App;
