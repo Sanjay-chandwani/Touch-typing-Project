@@ -68,7 +68,7 @@ p{
 
 .btn
 {
-  padding: 10px 19px;
+  padding: 10px 20px;
   margin: 0 auto;
   /* display: block; */
   max-width: 130px !important;
@@ -86,3 +86,4 @@ button.btn:hover {
   color: white;
   border: 0px;
 }
+
