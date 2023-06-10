@@ -5,7 +5,7 @@
 }
 #wrapper{
   
-  height: 44.6rem;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,7 +20,7 @@
   align-items: center;
   color: white;
   padding: 20px 22px;
-  max-width: 50rem;
+  max-width: 48rem;
 }
 h2{
   padding: 2rem 0;
